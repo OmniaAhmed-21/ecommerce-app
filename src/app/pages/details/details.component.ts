@@ -4,6 +4,8 @@ import { ProductsService } from '../../core/services/products/products.service';
 import { Iproduct } from '../../shared/interfaces/iproduct';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { TranslatePipe } from '@ngx-translate/core';
+import { CartService } from '../../core/services/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   imports: [CarouselModule,TranslatePipe],
@@ -13,7 +15,9 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class DetailsComponent implements OnInit{
   private readonly activatedRoute = inject(ActivatedRoute)
+  private readonly cartService = inject(CartService);
   private readonly productsService = inject(ProductsService)
+  private readonly toastrService = inject(ToastrService);
   private readonly changeDetectorRef = inject(ChangeDetectorRef);
   
   detailsProduct:Iproduct|null = null;
@@ -45,6 +49,19 @@ export class DetailsComponent implements OnInit{
       }
     })
     
+  }
+
+  addToCart(id:string):void{
+    this.cartService.addProductToCart(id).subscribe({
+      next:(res)=>{
+        console.log(res)
+        if(res.status == 'success'){
+          this.toastrService.success(res.message, 'fresh cart')
+          this.cartService.cartNumber.set(res.numOfCartItems);
+        }  
+      }
+
+    })
   }
 
 }

@@ -32,6 +32,7 @@
             </div>
 
             <button
+              (click)="addToCart(detailsProduct.id || detailsProduct._id)"
               class="bg-green-700 text-white py-2 px-10 border rounded w-full block hover:bg-green-800 transition">
               {{"PRODUCT_DETAILS.ADD_TO_CART"|translate}} 
             </button>

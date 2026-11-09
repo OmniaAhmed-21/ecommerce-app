@@ -114,6 +114,7 @@ export class HomeComponent implements OnInit{
     })
   }
 
+  
 isLoved(id: string): boolean {
   return this.whishlistData().some((item: any) => item._id === id);
 }
