@@ -1,0 +1,45 @@
+<section>
+  <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">{{"ORDERS.TITLE"|translate}}</h2>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (order of ordersList(); track order._id) {
+      <div class="bg-white border-2 border-green-200 rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+        
+        <div>
+         
+          <div class="flex justify-between items-center border-b pb-3 mb-4">
+            <span class="font-bold text-lg text-green-700">{{"ORDERS.ORDER_NUM"|translate}} #{{ order.id }}</span>
+            <span class="text-xs px-3 py-1 rounded-full font-semibold"
+                  [class.bg-green-100]="order.isPaid" [class.text-green-800]="order.isPaid"
+                  [class.bg-yellow-100]="!order.isPaid" [class.text-yellow-800]="!order.isPaid">
+              {{ order.isPaid ? ('ORDERS.PAID'|translate) : ('ORDERS.PENDING'|translate) }}
+            </span>
+          </div>
+
+          <div class="text-sm text-gray-600 mb-4 space-y-1">
+            <p><strong>{{'ORDERS.CUSTOMER'|translate}}:</strong> {{ order.user?.name }}</p>
+            <p><strong>{{'ORDERS.CITY'|translate}}:</strong> {{ order.shippingAddress?.city }}</p>
+            <p><strong>{{'ORDERS.PHONE'|translate}}:</strong> {{ order.shippingAddress?.phone }}</p>
+          </div>
+
+          <div class="border-t border-b py-3 my-3 space-y-3">
+            <p class="font-semibold text-xs text-gray-400 uppercase tracking-wider">{{'ORDERS.PRODUCTS'|translate}}:</p>
+            
+            @for (item of order.cartItems; track item._id) {
+              <div class="flex justify-between items-center text-sm bg-gray-50 p-2.5 rounded-lg">
+                <span class="text-gray-800 font-medium truncate w-2/3">{{ item.product?.title }}</span>
+                <span class="text-gray-600 font-semibold">{{ item.price }} EGP × {{ item.count }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center pt-4 mt-2 border-t">
+          <span class="text-gray-700 font-bold">{{'ORDERS.TOTAL_PRICE'|translate}}:</span>
+          <span class="text-green-600 font-extrabold text-xl">{{ order.totalOrderPrice }} EGP</span>
+        </div>
+
+      </div>
+    }
+  </div>
+</section>

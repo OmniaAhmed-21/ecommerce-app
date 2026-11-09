@@ -1,0 +1,103 @@
+<nav class="bg-gray-100 border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="/images/freshcart-logo.svg"  alt="Freshcart Logo" />
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:flex md:w-auto flex-grow" id="navbar-default">
+      @if(isLogin()){
+        <ul class="capitalize items-center flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a routerLink="/home" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm " aria-current="page">{{"NAV.HOME"|translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/products" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm " aria-current="page">{{"NAV.PRODUCTS"|translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/categories" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm " aria-current="page">{{"NAV.CATEGORIES"|translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/brands" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm " aria-current="page">{{"NAV.BRANDS"|translate}}</a>
+        </li>
+      </ul>
+      }
+      <ul class=" ms-auto items-center capitalize flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-0 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
+        <li>
+          <button id="dropdownNvbarButton" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-heading md:w-auto hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0">
+              {{'NAV.LANG'|translate}}<svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar" class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44">
+              <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownNvbarButton">
+                <li>
+                  <a 
+                  (click)="changeLang('en')"
+                    role="button"
+                    class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">ُEnglish</a>
+                </li>
+                <li>
+                  <a (click)="changeLang('ar')" role="button"  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Arabic</a>
+                </li>
+              </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+
+        @if(!isLogin()){
+        <li>
+          <a routerLink="/login" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">{{'NAV.LOGIN'|translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/register" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">{{'NAV.REGISTER'|translate}}</a>
+        </li>
+        }
+        @else{
+          <li>
+            <a routerLink="/cart" routerLinkActive=" text-green-700" class=" block py-2 px-3 text-3xl text-gray-700 rounded-sm relative" aria-current="page">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="absolute -top-1 -right-2 bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-md min-w-[20px] text-center">
+                {{countCart()}}
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/whishlist" routerLinkActive="text-red-500 bg-red-50" 
+              class="flex items-center justify-center  p-2 mx-3 text-xl rounded-xl text-red-500   duration-300 relative group" aria-current="page">
+              <i class="fa-solid fa-heart"></i>
+              <span class="absolute -top-1 -right-2 bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-md min-w-[20px] text-center">
+                {{countLoved()}}
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a role="button"(click)="AuthService.logOut()" class="block py-2 px-3  text-gray-700 rounded-sm  " aria-current="page">{{'NAV.LOGOUT'|translate}}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+

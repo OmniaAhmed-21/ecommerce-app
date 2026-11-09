@@ -1,0 +1,54 @@
+@if (cartDetails.totalCartPrice) {
+    <section class="bg-gray-100 border rounded shadow p-4 w-3/4 mx-auto my-6">
+    <h1 class="text-center text-3xl text-green-700 font-light mb-4">Shop Cart</h1>
+
+    @if (cartDetails && cartDetails.products && cartDetails.products.length >  0) {
+        <span class="text-green-700 block mb-4 font-semibold">Total Cart Price: {{ cartDetails.totalCartPrice }} EGP</span>
+
+        @for (prod of cartDetails.products; track prod.product.id) {
+            <div class="grid md:grid-cols-[15%_minmax(0,1fr)] gap-4 items-center border-b py-4">
+                <div>
+                    <img [src]="prod.product.imageCover" [alt]="prod.product.title" class="w-full rounded object-cover">
+                </div>
+
+                <!-- info -->
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-semibold text-gray-800">{{ prod.product.title }}</h3>
+                        <h4 class="text-green-700 my-1">Price: {{ prod.price }} EGP</h4>
+                        <button (click)="removeItem(prod.product.id)" class="text-red-500 hover:text-red-700 text-sm">
+                            <i class="fa-solid fa-trash-can text-red-500"></i> Remove
+                        </button>
+                    </div>
+                    <!-- btns -->
+                    <div class="flex items-center gap-4">
+                        <button (click)="updateCount(prod.product.id , prod.count +1)" class="text-green-700 text-3xl"><i class="fa-regular fa-square-plus"></i></button>
+                        <span class="text-lg font-bold">{{ prod.count }}</span>
+                        <button (click)="updateCount(prod.product.id , prod.count -1)" class="text-green-700 text-3xl"><i class="fa-regular fa-square-minus"></i></button>
+                    </div>
+                </div>
+            </div>
+        }
+    } @else {
+        <p class="text-center text-gray-500 py-4">Loading cart...</p>
+    }
+    <div class="flex  items-center justify-between mt-3">
+        <button class="btn-main" [routerLink]='["/checkout" , cartDetails._id]'>Payment</button>
+
+        <button (click)="clearItem()" class="border border-red-500 text-red-500 px-4 py-2 rounded-md hover:bg-red-500 hover:text-white transition font-medium text-sm">
+            <i class="fa-solid fa-trash mr-1"></i> Clear Cart
+        </button>
+    </div>
+</section>
+}
+@else {
+    <div class="flex flex-col items-center justify-center ">
+        <div class="w-[50%] mb-4">
+            <img src="/images/empty -Cart.png" class="w-full object-contain" alt="Your Cart is empty">
+        </div>
+        <a routerLink="/products" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium">
+            Start Shopping
+        </a>
+    </div>
+}
+

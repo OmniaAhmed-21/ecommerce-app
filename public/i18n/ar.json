@@ -1,0 +1,109 @@
+{
+  "NAV": {
+    "HOME": "الرئيسية",
+    "PRODUCTS": "المنتجات",
+    "CATEGORIES": "الأقسام",
+    "BRANDS": "الماركات",
+    "LANG":"اللغة",
+    "LOGIN": "تسجيل الدخول",
+    "REGISTER": "حساب جديد",
+    "LOGOUT": "تسجيل الخروج"
+  },
+  "REGISTER": {
+  "TITLE": "إنشاء حساب جديد",
+  "NAME_LABEL": "الاسم",
+  "NAME_PLACEHOLDER": "أدخل اسمك",
+  "NAME_REQUIRED": "الاسم مطلوب",
+  "NAME_MINLENGTH": "يجب أن يكون الاسم 3 أحرف أو أكثر",
+  "NAME_MAXLENGTH": "يجب ألا يتجاوز الاسم 20 حرفاً",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+  "EMAIL_INVALID": "البريد الإلكتروني غير صالح",
+  "PASSWORD_LABEL": "كلمة المرور",
+  "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+  "PASSWORD_ERROR": "يجب أن تبدأ كلمة المرور بحرف كبير تتبعه 6 أحرف أو أكثر",
+  "REPASSWORD_LABEL": "تأكيد كلمة المرور",
+  "REPASSWORD_PLACEHOLDER": "أعد كتابة كلمة المرور",
+  "REPASSWORD_MISMATCH": "تأكيد كلمة المرور غير متطابق",
+  "PHONE_LABEL": "رقم الهاتف",
+  "PHONE_PLACEHOLDER": "أدخل رقم هاتفك",
+  "PHONE_ERROR": "يُقبل فقط أرقام الهواتف المصرية",
+  "SUBMIT_BTN": "تسجيل الحساب"
+},
+  "LOGIN": {
+  "TITLE": "تسجيل الدخول",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+  "EMAIL_INVALID": "البريد الإلكتروني غير صالح",
+  "PASSWORD_LABEL": "كلمة المرور",
+  "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+  "PASSWORD_ERROR": "يجب أن تبدأ كلمة المرور بحرف كبير تتبعه 6 أحرف أو أكثر",
+  "SUBMIT_BTN": "دخول",
+  "FORGET_PASSWORD": "نسيت كلمة المرور؟"
+},
+"FORGET": {
+  "TITLE": "نسيت كلمة المرور",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+  "EMAIL_INVALID": "البريد الإلكتروني غير صالح",
+  "VERIFY_EMAIL_BTN": "التحقق من البريد",
+  "CODE_LABEL": "كود إعادة التعيين",
+  "CODE_PLACEHOLDER": "أدخل كود التحقق",
+  "INCORRECT_CODE": "الكود غير صحيح",
+  "VERIFY_CODE_BTN": "التحقق من الكود",
+  "NEW_PASSWORD_LABEL": "كلمة المرور الجديدة",
+  "NEW_PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الجديدة",
+  "RESET_BTN": "إعادة تعيين كلمة المرور"
+},
+  "HOME": {
+    "POPULAR_CATEGORY": "الأقسام الشائعة",
+    "POPULAR_PRODUCTS": "المنتجات الأكثر طلباً",
+    "ADD_TO_CART": "إضافة إلى السلة",
+    "EGP": "جنيه"
+  },
+  "PRODUCT_DETAILS": {
+  "TITLE": "تفاصيل المنتج",
+  "CURRENCY": "جنيه",
+  "ADD_TO_CART": "+إضافة إلى السلة",
+  "LOADING": "جاري تحميل التفاصيل..."
+},
+  "CHECKOUT": {
+  "TITLE": "إتمام الطلب الآن",
+  "DETAILS_LABEL": "التفاصيل",
+  "DETAILS_PLACEHOLDER": "أدخل تفاصيل عنوانك",
+  "DETAILS_REQUIRED": "تفاصيل العنوان مطلوبة",
+  "DETAILS_MINLENGTH": "يجب ألا تقل التفاصيل عن 3 أحرف",
+  "PHONE_LABEL": "رقم الهاتف",
+  "PHONE_PLACEHOLDER": "أدخل رقم هاتفك",
+  "PHONE_ERROR": "يُقبل فقط أرقام الهواتف المصرية",
+  "CITY_LABEL": "المدينة",
+  "CITY_PLACEHOLDER": "أدخل مدينتك",
+  "CITY_REQUIRED": "اسم المدينة مطلوب",
+  "CITY_MINLENGTH": "يجب ألا تقل المدينه عن حرفين",
+  "ONLINE_PAY": "الدفع الإلكتروني",
+  "CASH_PAY": "الدفع نقداً"
+},
+  "ORDERS": {
+  "TITLE": "سجل طلباتي",
+  "ORDER_NUM": "طلب",
+  "PAID": "تم الدفع",
+  "PENDING": "قيد الانتظار",
+  "CUSTOMER": "العميل",
+  "CITY": "المدينة",
+  "PHONE": "الهاتف",
+  "PRODUCTS": "المنتجات في هذا الطلب",
+  "TOTAL_PRICE": "السعر الإجمالي"
+},
+"FOOTER": {
+  "APP_TITLE": "احصل على تطبيق فريش كارت",
+  "APP_DESC": "سنرسل لك رابطاً، افتحه على هاتفك لتحميل التطبيق",
+  "EMAIL_PLACEHOLDER": "البريد الإلكتروني",
+  "SHARE_BTN": "مشاركة رابط التطبيق",
+  "PAYMENT_PARTNERS": "شركاء الدفع",
+  "DELIVER_PARTNERS": "احصل على توصيلك مع فريش كارت"
+}
+
+}

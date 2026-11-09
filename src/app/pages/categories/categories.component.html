@@ -1,0 +1,15 @@
+<section>
+  <h2 class="text-4xl">{{ 'HOME.POPULAR_CATEGORY' | translate }}</h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (cat of categories(); track cat._id) {
+      <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative py-4">
+        <div class="card-img">
+          <img [src]="cat.image" class="w-full h-[250px] object-contain" [alt]="cat.name" />
+        </div>
+        <div class="card-body px-2 py-4 text-center">
+          <h3 class="font-medium">{{ cat.name }}</h3>
+        </div>
+      </div>
+    }
+  </div>
+</section>

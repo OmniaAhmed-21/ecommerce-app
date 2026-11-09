@@ -1,0 +1,49 @@
+<section>
+  <h2 class="text-4xl">{{ 'HOME.POPULAR_PRODUCTS' | translate }}</h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (prod of products(); track prod.id) {
+      <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative py-4">
+        <button
+          (click)="$event.stopPropagation(); toggleWishlist(prod.id)"
+          class="absolute top-2 right-2 flex items-center justify-center bg-white/80 p-2 rounded-full shadow-md text-gray-700 transition-colors duration-200 z-10"
+        >
+          <span>
+            @if (!isLoved(prod.id)) {
+              <i class="fa-regular fa-heart text-xl" style="color: rgb(235, 68, 9)"></i>
+            } @else {
+              <i class="fa-solid fa-heart text-xl" style="color: rgb(235, 68, 9)"></i>
+            }
+          </span>
+        </button>
+        
+        <div [routerLink]="['/details', prod.id]">
+          <div class="card-img">
+            <img
+              [src]="prod.imageCover"
+              class="w-full h-[250px] object-contain"
+              [alt]="prod.title"
+            />
+          </div>
+          <div class="card-body px-2 py-4">
+            <h4 class="text-green-500 text-xs">{{ prod.category.name }}</h4>
+            <h3 class="font-medium">{{ prod.title.split(' ', 2).join(' ') }}</h3>
+            <div class="flex justify-between items-center">
+              <span>{{ prod.price }} {{ 'HOME.EGP' | translate }}</span>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-300"></i>
+                <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          (click)="addToCart(prod.id)"
+          class="bg-green-700 text-white py-2 px-10 border rounded w-[90%] m-auto block"
+        >
+          {{ 'HOME.ADD_TO_CART' | translate }}
+        </button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,109 @@
+{
+  "NAV": {
+    "HOME": "home",
+    "PRODUCTS": "products",
+    "CATEGORIES": "categories",
+    "BRANDS": "brands",
+    "LANG":"lang",
+    "LOGIN": "login",
+    "REGISTER": "register",
+    "LOGOUT": "logout"
+  },
+  "REGISTER": {
+  "TITLE": "Register Now",
+  "NAME_LABEL": "Name",
+  "NAME_PLACEHOLDER": "Enter your name",
+  "NAME_REQUIRED": "Name is required",
+  "NAME_MINLENGTH": "Name Should be more than or equal 3 chars",
+  "NAME_MAXLENGTH": "Name Should be less than or equal 20 chars",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email address",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_ERROR": "Password must start with uppercase then from 6 to more any chars",
+  "REPASSWORD_LABEL": "Re-password",
+  "REPASSWORD_PLACEHOLDER": "Confirm your password",
+  "REPASSWORD_MISMATCH": "Password confirmation is incorrect",
+  "PHONE_LABEL": "Phone",
+  "PHONE_PLACEHOLDER": "Enter your phone number",
+  "PHONE_ERROR": "Accept only egypt phone numbers",
+  "SUBMIT_BTN": "SignUp"
+},
+  "LOGIN": {
+  "TITLE": "LogIn Now",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email address",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_ERROR": "Password must start with uppercase then from 6 to more chars",
+  "SUBMIT_BTN": "LogIn",
+  "FORGET_PASSWORD": "Forget Password"
+},
+"FORGET": {
+  "TITLE": "Forget Password",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email address",
+  "VERIFY_EMAIL_BTN": "Verify Email",
+  "CODE_LABEL": "Reset Code",
+  "CODE_PLACEHOLDER": "Enter reset code",
+  "INCORRECT_CODE": "Incorrect Code",
+  "VERIFY_CODE_BTN": "Verify Code",
+  "NEW_PASSWORD_LABEL": "New Password",
+  "NEW_PASSWORD_PLACEHOLDER": "Enter new password",
+  "RESET_BTN": "Reset Password"
+},
+  "HOME": {
+    "POPULAR_CATEGORY": "Popular Category",
+    "POPULAR_PRODUCTS": "Popular Products",
+    "ADD_TO_CART": "Add to cart",
+    "EGP": "EGP"
+  },
+  "PRODUCT_DETAILS": {
+  "TITLE": "Details Product",
+  "CURRENCY": "EGP",
+  "ADD_TO_CART": "+Add to cart",
+  "LOADING": "Loading details..."
+},
+  "CHECKOUT": {
+  "TITLE": "CheckOut Now",
+  "DETAILS_LABEL": "Details",
+  "DETAILS_PLACEHOLDER": "Enter your address details",
+  "DETAILS_REQUIRED": "Details is required",
+  "DETAILS_MINLENGTH": "Details must be at least 3 chars",
+  "PHONE_LABEL": "Phone",
+  "PHONE_PLACEHOLDER": "Enter your phone number",
+  "PHONE_ERROR": "Accept only egypt phone numbers",
+  "CITY_LABEL": "City",
+  "CITY_PLACEHOLDER": "Enter your city",
+  "CITY_REQUIRED": "City is required",
+  "CITY_MINLENGTH": "City must be at least 2 chars",
+  "ONLINE_PAY": "Online Payment",
+  "CASH_PAY": "Cash Payment"
+},
+  "ORDERS": {
+  "TITLE": "My Orders History",
+  "ORDER_NUM": "Order",
+  "PAID": "Paid",
+  "PENDING": "Pending",
+  "CUSTOMER": "Customer",
+  "CITY": "City",
+  "PHONE": "Phone",
+  "PRODUCTS": "Products in this order",
+  "TOTAL_PRICE": "Total Price"
+},
+"FOOTER": {
+  "APP_TITLE": "Get The FreshCart App",
+  "APP_DESC": "We Will Send You a Link, Open it on Your Phone to download the app",
+  "EMAIL_PLACEHOLDER": "Email",
+  "SHARE_BTN": "Share App Link",
+  "PAYMENT_PARTNERS": "Payment partners",
+  "DELIVER_PARTNERS": "Get Deliveries with FreshCart"
+}
+
+}

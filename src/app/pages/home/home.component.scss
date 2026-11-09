@@ -1,0 +1,14 @@
+.card{
+    .btn-add{
+        transform: translateY(140%);
+        transition:all 0.5s ;
+        opacity:0;
+    }
+    &:hover{
+        .btn-add{
+            transform: translateY(0);
+            opacity:1;
+        }
+    }
+    
+}

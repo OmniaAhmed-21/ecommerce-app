@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@import 'ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css';
+@import 'ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css';
+@import 'ngx-toastr/toastr';
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-link {
+  transition: unset !important;
+}
+.active-link {
+  background-color: var(--main-color) !important;
+  color: var(--light-color) !important;
+  border-radius: 5px;
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.product {
+  border-radius: 5px;
+  border: solid 1px var(--main-color);
+  transition: box-shadow 0.5s;
+  overflow: hidden;
+}
+
+.product:hover {
+  box-shadow: 0 0 10px #11bd1168;
+}
+
+.font-sm {
+  font-size: 12px;
+}
+.text-main {
+  color: var(--main-color);
+}
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+.btn-main {
+  @apply bg-green-700 text-white px-12 py-2 border rounded hover:bg-green-900 transition-colors duration-500
+
+}
+
+

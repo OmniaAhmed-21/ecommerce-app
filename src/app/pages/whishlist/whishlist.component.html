@@ -1,0 +1,57 @@
+<section>
+  @if (whishlistData() && whishlistData().length > 0) {
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      @for (wish of whishlistData(); track wish.id) {
+        <div
+          class="card border border-green-400/50 rounded-md overflow-hidden shadow relative py-4"
+        >
+          <button
+            (click)="removeItem(wish.id)"
+            class="absolute top-2 right-2 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-md text-gray-700 hover:text-red-500 transition-colors duration-200 z-10"
+          >
+            <span class="text-xl">
+              <i class="fa-solid fa-heart" style="color: rgb(255, 67, 0)"></i>
+            </span>
+          </button>
+
+          <div [routerLink]="['/details', wish.id]" class="cursor-pointer">
+            <div class="card-img relative flex justify-center items-center">
+              <img
+                [src]="wish.imageCover"
+                class="w-full h-[250px] object-contain transition-transform duration-300 group-hover:scale-105"
+                [alt]="wish.title"
+              />
+            </div>
+            <div class="card-body px-2 py-4">
+              <h4 class="text-green-500 text-xs">{{ wish.category?.name }}</h4>
+              <h3 class="font-medium">{{ wish.title.split(' ', 2).join(' ') }}</h3>
+              <div class="flex justify-between items-center">
+                <span>{{ wish.price }} {{ 'HOME.EGP' | translate }}</span>
+                <div class="flex items-center">
+                  <i class="fas fa-star text-yellow-300"></i>
+                  <span class="text-gray-500">{{ wish.ratingsAverage }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="bg-green-700 text-white py-2 px-10 border rounded w-[90%] m-auto block cursor-pointer"
+          >
+            {{ 'HOME.ADD_TO_CART' | translate }}
+          </button>
+        </div>
+      }
+    </div>
+  }
+  @else {
+    <div class="flex flex-col items-center justify-center ">
+        <div class="w-[50%] mb-4">
+            <img src="/images/wishlistempty.jfif" class="w-full object-contain" alt="Your Cart is empty">
+        </div>
+        <a routerLink="/products" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition font-medium">
+            Start Shopping
+        </a>
+    </div>
+}
+</section>

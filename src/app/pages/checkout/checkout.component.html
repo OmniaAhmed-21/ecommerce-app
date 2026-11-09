@@ -1,0 +1,162 @@
+<section class="w-1/2 mx-auto bg-gray-50 p-4 rounded border shadow">
+  <h1 class="text-3xl text-center text-green-700 font-light">{{'CHECKOUT.TITLE'|translate}}</h1>
+  <form [formGroup]="checkOutForm" (ngSubmit)="sumbitForm()" >
+
+    <div class="mb-1">
+      @let detailscontrol = checkOutForm.get('details');
+      <label for="details" class="block mb-2.5 text-sm font-medium text-heading">{{'CHECKOUT.DETAILS_LABEL'|translate}}</label>
+      <textarea
+        formControlName="details"
+        id="details"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="'CHECKOUT.DETAILS_PLACEHOLDER' | translate"
+        required
+      ></textarea>
+
+      @if(detailscontrol?.errors && detailscontrol?.touched){
+        <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+        role="alert"
+        >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+          @if(detailscontrol?.getError('required')){
+            <li>{{'CHECKOUT.DETAILS_REQUIRED'|translate}}</li>
+          }
+          @else if (detailscontrol?.getError('minlength')) {
+            <li>{{'CHECKOUT.DETAILS_MINLENGTH'|translate}}</li>
+          }
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let phoneconrtol = checkOutForm.get('phone');
+      <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">{{'CHECKOUT.PHONE_LABEL'|translate}}</label>
+      <input
+        formControlName="phone"
+        type="tel"
+        id="phone"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="'CHECKOUT.PHONE_PLACEHOLDER' | translate"
+        required
+      />
+
+      @if(phoneconrtol?.errors && phoneconrtol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{'CHECKOUT.PHONE_ERROR'|translate}}</li>
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let cityconrtol = checkOutForm.get('city');
+      <label for="city" class="block mb-2.5 text-sm font-medium text-heading">{{'CHECKOUT.CITY_LABEL'|translate}}</label>
+      <input
+        formControlName="city"
+        type="text"
+        id="city"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('CHECKOUT.CITY_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(cityconrtol?.errors && cityconrtol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if(cityconrtol?.getError('required')){
+            <li>{{'CHECKOUT.CITY_REQUIRED'|translate}}</li>
+          }
+          @else if (cityconrtol?.getError('minlength')) {
+            <li>{{'CHECKOUT.CITY_MINLENGTH'|translate}}</li>
+          }
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <button [disabled]="isLoading" type="submit" class="btn-main mt-3">
+      {{"CHECKOUT.ONLINE_PAY"|translate}}
+      @if(isLoading){
+        <span><i class="fas fa-spin fa-spinner"></i></span>
+      }
+    </button>
+
+    <button [disabled]="isLoading"  type="submit" class="btn-main mt-3 ms-3">
+      {{"CHECKOUT.CASH_PAY"|translate}}
+      @if(isLoading){
+        <span><i class="fas fa-spin fa-spinner"></i></span>
+      }
+    </button>
+
+
+  </form>
+</section>

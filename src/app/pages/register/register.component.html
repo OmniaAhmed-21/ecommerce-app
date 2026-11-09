@@ -1,0 +1,250 @@
+<section class="w-1/2 mx-auto bg-gray-50 p-4 rounded border shadow">
+  <h1 class="text-3xl text-center text-green-700 font-light">{{"REGISTER.TITLE"|translate}}</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="sumbitForm()">
+    <div class="mb-1">
+      @let namecontrol = registerForm.get('name');
+      <label for="name" class="block mb-2.5 text-sm font-medium text-heading">{{"REGISTER.NAME_LABEL"|translate}}</label>
+      <input
+        formControlName="name"
+        type="text"
+        id="name"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('REGISTER.NAME_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(namecontrol?.errors && namecontrol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+          @if(namecontrol?.getError('required')){
+            <li>{{"REGISTER.NAME_REQUIRED"|translate}}</li>
+          }
+          @else if (namecontrol?.getError('minlength')) {
+            <li>{{"REGISTER.NAME_MINLENGTH"|translate}}</li>
+          }
+          @else if (namecontrol?.getError('maxlenght')) {
+            <li>{{"REGISTER.NAME_MAXLENGTH"|translate}}</li>
+          }
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let emailcontrol = registerForm.get('email');
+      <label for="email" class="block mb-2.5 text-sm font-medium text-heading">{{"REGISTER.EMAIL_LABEL"|translate}}</label>
+      <input
+        formControlName="email"
+        type="email"
+        id="email"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('REGISTER.EMAIL_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(emailcontrol?.errors && emailcontrol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+          @if(emailcontrol?.getError('required')){
+            <li>{{"REGISTER.EMAIL_REQUIRED"|translate}}</li>
+          }
+          @else if (emailcontrol?.getError('email')) {
+            <li>{{"REGISTER.EMAIL_INVALID"|translate}}</li>
+          }
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let passwordconrtol = registerForm.get('password');
+      <label for="password" class="block mb-2.5 text-sm font-medium text-heading">{{"REGISTER.PASSWORD_LABEL"|translate}}</label>
+      <input
+        formControlName="password"
+        type="password"
+        id="password"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('REGISTER.PASSWORD_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(passwordconrtol?.errors && passwordconrtol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{"REGISTER.PASSWORD_ERROR"|translate}} </li>
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let repasswordcontrol = registerForm.get('rePassword');
+      <label for="repassword" class="block mb-2.5 text-sm font-medium text-heading">{{"REGISTER.REPASSWORD_LABEL"|translate}} </label
+      >
+      <input
+        formControlName="rePassword"
+        type="password"
+        id="repassword"
+        class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('REGISTER.REPASSWORD_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(registerForm.getError('mismatch') && repasswordcontrol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{"REGISTER.REPASSWORD_MISMATCH"|translate}} </li>
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+
+    <div class="mb-1">
+      @let phonecontrol = registerForm.get('phone');
+      <label for="phone" class=" block mb-2.5 text-sm font-medium text-heading">{{"REGISTER.PHONE_LABEL"|translate}}</label>
+      <input
+        formControlName="phone"
+        type="tel"
+        id="phone"
+        class=" bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+        [placeholder]="('REGISTER.PHONE_PLACEHOLDER'|translate)"
+        required
+      />
+
+      @if(phonecontrol?.errors && phonecontrol?.touched){
+        <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <svg
+        class="w-4 h-4 me-2 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{"REGISTER.PHONE_ERROR"|translate}}</li>
+        </ul>
+      </div>
+    </div>
+      }
+    </div>
+    
+    <button [disabled]="isLoading" type="sumbit" class="btn-main">
+      {{"REGISTER.SUBMIT_BTN"|translate}}
+      @if(isLoading){
+        <span><i class="fas fa-spin fa-spinner"></i></span>
+      }
+    </button>
+
+    @if (msgError) {
+      <p class="p-4 m-4 text-sm text-red-800 rounded bg-red-50 border border-red-300 dark:bg-gray-800 dark:text-red-400 dark:border-red-800">{{msgError}}</p>
+    }
+    
+  </form>
+</section>
