@@ -44,7 +44,8 @@ export class LoginComponent {
       },
       error:(err)=>{
         console.log(err)
-        this.msgError = err.error.message;
+        this.msgError = err?.error?.message || err?.message || 'Incorrect email or password';
+
         this.cdr.detectChanges();
       
         this.isLoading = false;
