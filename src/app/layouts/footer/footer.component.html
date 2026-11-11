@@ -1,36 +1,47 @@
-<footer class="bg-gray-100 border-gray-200 dark:bg-gray-900 py-12">
-  <div class="container">
-    <h2 class="m-0 text-lg">{{'FOOTER.APP_TITLE'|translate}}</h2>
-    <p class="text-gray-500 text-sm">
+<footer class="bg-gray-100 border-gray-200 dark:bg-gray-900 py-8 md:py-12">
+  <div class="container px-4 mx-auto">
+    <h2 class="m-0 text-lg font-semibold">{{'FOOTER.APP_TITLE'|translate}}</h2>
+    <p class="text-gray-500 text-sm mt-1 mb-4">
       {{'FOOTER.APP_DESC'|translate}}
     </p>
 
-    <!-- inputs design  -->
-    <div class="flex items-center gap-3 whitespace-nowrap">
-      <input type="text" class="  border-gray-500 text-gray-900 text-sm rounded-lg block w-full p-2.5" [placeholder]="'FOOTER.EMAIL_PLACEHOLDER'|translate"/>
-      <button class="btn-main">{{'FOOTER.SHARE_BTN'|translate}}</button>
+    <!-- inputs design -->
+    <div class="flex flex-col sm:flex-row items-center gap-3 w-full">
+      <input 
+        type="email" 
+        class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-green-500 focus:border-green-500" 
+        [placeholder]="'FOOTER.EMAIL_PLACEHOLDER'|translate"
+      />
+      <button class="btn-main w-fit whitespace-nowrap px-5 py-2.5 self-start sm:self-auto">
+        {{'FOOTER.SHARE_BTN'|translate}}
+      </button>
     </div> 
 
-    <hr />
+    <hr class="my-6 border-gray-200 dark:border-gray-700" />
 
-    <!-- footer payment Details Design  -->
-    <div class="pay-details flex justify-between items-center mt-8">
-      <div class="flex items-center gap-2">
-        <h3 class="text-sm m-0">{{'FOOTER.PAYMENT_PARTNERS'|translate}}</h3>
-        <img src="./images/amazon-pay.png" width="50px" alt="amazon-pay" />
-        <img src="./images/American-Express-Color.png" width="50px" alt="American-Express"/>
-        <img src="./images/paypal.png" width="50px" alt="paypal" />
-        <img src="./images/mastercard.webp" width="50px" alt="mastercard" />
+    <!-- footer payment Details Design -->
+    <div class="pay-details flex flex-col lg:flex-row justify-between items-center gap-6">
+      <!-- Payment Partners -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
+        <h3 class="text-sm font-medium m-0 w-full sm:w-auto">{{'FOOTER.PAYMENT_PARTNERS'|translate}}</h3>
+        <div class="flex items-center gap-2">
+          <img src="./images/amazon-pay.png" class="w-12 h-auto object-contain" alt="amazon-pay" />
+          <img src="./images/American-Express-Color.png" class="w-12 h-auto object-contain" alt="American-Express"/>
+          <img src="./images/paypal.png" class="w-12 h-auto object-contain" alt="paypal" />
+          <img src="./images/mastercard.webp" class="w-12 h-auto object-contain" alt="mastercard" />
+        </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <h3 class="text-sm m-0">{{'FOOTER.DELIVER_PARTNERS'|translate}}</h3>
-        <img src="./images/get-google-play.png" width="100px" alt="google-play" />
-        <img src="./images/get-apple-store.png" width="100px" alt="apple-store" />
+      <!-- App Store Downloads -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
+        <h3 class="text-sm font-medium m-0 w-full sm:w-auto">{{'FOOTER.DELIVER_PARTNERS'|translate}}</h3>
+        <div class="flex items-center gap-2">
+          <img src="./images/get-google-play.png" class="w-24 h-auto object-contain" alt="google-play" />
+          <img src="./images/get-apple-store.png" class="w-24 h-auto object-contain" alt="apple-store" />
+        </div>
       </div>
     </div>
   </div>
 </footer>
-
 
 

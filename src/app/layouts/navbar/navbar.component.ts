@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   private readonly wishlistService = inject(WishlistService)
 
 
-  isLogin = input<boolean>(true);
+  isLogin = input<boolean>(false);
 
   countCart:Signal<number> = computed( ()=>this.cartService.cartNumber());
 
@@ -33,18 +33,26 @@ export class NavbarComponent implements OnInit {
       initFlowbite();
     });
 
+    if (localStorage.getItem('userToken')) {
+      this.loadUserData();
+    }
+  }
+
+  loadUserData(): void {
     this.cartService.getLoggedUser().subscribe({
       next:(res)=>{
         this.cartService.cartNumber.set(res.numOfCartItems);
       }
-    })
+    });
 
     this.wishlistService.getLoggedUserWhishlist().subscribe({
       next:(res)=>{
         this.wishlistService.lovedNumber.set(res.data.length)
       }
     })
+    
   }
+
 
   changeLang(lang:string):void{
     this.myTranslateService.changeLangTranslate(lang)
